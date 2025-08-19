@@ -1,10 +1,6 @@
 import { Navigate } from 'react-router-dom'
 
-interface ProtectedRouteProps {
-  children: React.ReactNode
-}
-
-export function ProtectedRoute({ children }: ProtectedRouteProps) {
+export function ProtectedRoute({ children }) {
   const isAuthenticated = localStorage.getItem('isAuthenticated') === 'true'
   
   if (!isAuthenticated) {

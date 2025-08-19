@@ -35,7 +35,7 @@ export function AppSidebar() {
   const currentPath = location.pathname
   const collapsed = state === "collapsed"
 
-  const isActive = (path: string) => currentPath === path || (path === "/" && currentPath === "/")
+  const isActive = (path) => currentPath === path || (path === "/" && currentPath === "/")
   
   const handleLogout = () => {
     // Clear any auth tokens/data here
@@ -47,7 +47,7 @@ export function AppSidebar() {
     navigate('/login')
   }
 
-  const getNavClassName = (path: string) => {
+  const getNavClassName = (path) => {
     const baseClasses = "flex items-center w-full transition-all duration-200 hover:bg-sidebar-accent"
     return isActive(path) 
       ? `${baseClasses} bg-sidebar-primary text-sidebar-primary-foreground shadow-md`
